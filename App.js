@@ -36,7 +36,8 @@ export default class App extends React.Component {
     }
     else
     {
-      return(
+      return
+      (
         <AppLoading
           startAsync={this.loadAssets}
           onFinish={this.handleLoaded}
