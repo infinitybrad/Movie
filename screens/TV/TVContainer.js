@@ -34,19 +34,38 @@ export default class extends Component{
     };
 
     async componentDidMount(){
+        let popular,topRated,airingToday,error;
+
         try{
+            ({
+                data:{result:popular}
+            }= await tvApi.popular());
+            ({
+                data:{result:topRated}
+            }= await tvApi.topRated());
+            ({
+                data:{result:airingToday}
+            }= await tvApi.airingToday());
     
            
             
         }catch{
-            this.setState({error:"Can't get Movies."});
+            //this.setState({error:"Can't get Movies."});
+            error = "Can't get TV";
 
         }finally{
-            this.setState({loading:false});
+            this.setState({
+                loading:false,
+                error,
+                popular,
+                topRated,
+                airingToday
+
+            });
         }
     }
     render(){
-        const{loading} =this.state;
+        const{loading,popular,topRated,airingToday,error} =this.state;
         return <TVPresenter loading={loading} />;
     }
 
