@@ -65,8 +65,15 @@ export default class extends Component{
         }
     }
     render(){
-        const{loading,popular,topRated,airingToday,error} =this.state;
-        return <TVPresenter loading={loading} />;
+        const{loading,popular,topRated,airingToday} =this.state;
+        return( 
+            <TVPresenter 
+                loading={loading} 
+                airingToday={airingToday}
+                topRated={topRated}
+                popular={popular}
+            />
+        );
     }
 
 }

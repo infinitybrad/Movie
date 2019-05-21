@@ -45,8 +45,15 @@ export default class extends Component{
         }
     }
     render(){
-        const{loading,upcoming,popular,nowPlaying,error} =this.state;
-        return <MoviesPresenter loading={loading} />;
+        const{loading,upcoming,popular,nowPlaying} =this.state;
+        return (
+            <MoviesPresenter 
+                loading={loading} 
+                popular={popular}
+                nowPlaying={nowPlaying}
+                upcoming={upcoming}
+            />
+        );
     }
 
 }
