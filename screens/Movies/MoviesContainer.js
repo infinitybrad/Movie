@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import MoviesPresenter from "./MoviesPresenter";
 import {movieApi} from "../../api";
 
+
 export default class extends Component{
 
     state = {
@@ -21,13 +22,13 @@ export default class extends Component{
             // const nowPlaying = await movieApi.nowPlaying();
             // console.log(upcoming,popular,nowPlaying);
             ({
-                data:{result:upcoming}
+                data:{results:upcoming}
             }= await movieApi.upcoming());
             ({
-                data:{result:popular}
+                data:{results:popular}
             }= await movieApi.popular());
             ({
-                data:{result:nowPlaying}
+                data:{results:nowPlaying}
             }= await movieApi.nowPlaying());
         }catch{
             //this.setState({error:"Can't get Movies."});
