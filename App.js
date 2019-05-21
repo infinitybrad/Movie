@@ -1,15 +1,15 @@
 import React from 'react';
 import {AppLoading,Font}from 'expo';
 import { Ionicons } from "@expo/vector-icons";
-import TabNavigation from './navigation/TabNavigation';
+import MainNavigation from './navigation/MainNavigation';
 //import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component{
 
-  state = {
-    loaded : false
+  state ={
+    loaded:false
   };
-
+  
   handleError = error =>console.log(error);
   handleLoaded = () =>this.setState({loaded:true});
 
@@ -22,10 +22,13 @@ export default class App extends React.Component{
   };
   render()
   {
+    
+
     const {loaded} = this.state;
+    
     if(loaded)
     {
-      return <TabNavigation />;
+      return <MainNavigation />;
     }
     else
     {
