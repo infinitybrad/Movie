@@ -7,7 +7,7 @@ const TVPresenter =({loading,popular,topRated,airingToday}) =>
     loading ? <Loader /> : <Text>TV</Text>;
 
     TVPresenter.protoTypes ={
-    loading:PropTypes.bool.isRequired
+    loading:PropTypes.bool.isRequired,
     popular:PropTypes.array,
     topRated:PropTypes.array,
     airingToday:PropTypes.array
