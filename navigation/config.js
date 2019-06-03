@@ -2,7 +2,7 @@ import {createStackNavigator }from "react-navigation";
 import {BG_COLOR,WHITE,TINT_COLOR} from "../constants/Colors";
 
 export const headerStyles ={
-    headerStyles:{
+    headerStyle:{
         backgroundColor:BG_COLOR,
         borderBottomWidth:0
     },

@@ -100,7 +100,7 @@ MoviesSlide.propTypes ={
     id: PropTypes.number.isRequired,
     posterPhoto:PropTypes.string.isRequired,
     backgroundPhoto:PropTypes.string.isRequired,
-    title:PropTypes.shape.isRequired,
+    title:PropTypes.string.isRequired,
     voteAvg:PropTypes.number.isRequired,
     overview:PropTypes.string.isRequired
 
