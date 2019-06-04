@@ -21,9 +21,9 @@ const MoviesPresenter =({loading,upcoming,popular,nowPlaying}) =>
         <Container>
             {nowPlaying ? <MovieSlider movies={nowPlaying}/>:null}
             {upcoming ? (
-                <Section title ={"Upcoming Movies"}>
+                <Section title ="Upcoming Movies">
                     {upcoming
-                        .filter(moive=>movie.poster_path !==null)
+                        .filter(movie=>movie.poster_path !==null)
                         .map(movie =>(
                             <MovieItem 
                                 key = {movie.id}
@@ -31,6 +31,24 @@ const MoviesPresenter =({loading,upcoming,popular,nowPlaying}) =>
                                 voteAvg ={movie.vote_average}
                                 id ={movie.id}
                                 title={movie.title}
+                            />
+                        ))    
+                    }
+                </Section>
+            ) :null}
+            {popular ? (
+                <Section title ="Popular Movies" horizontal={false} >
+                    {upcoming
+                        .filter(movie => movie.poster_path !==null)
+                        .map(movie =>(
+                            <MovieItem 
+                                key = {movie.id}
+                                posterPhoto ={movie.poster_path}
+                                voteAvg ={movie.vote_average}
+                                id ={movie.id}
+                                title={movie.title}
+                                overview={movie.overview}
+                                horizontal={true}
                             />
                         ))    
                     }

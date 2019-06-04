@@ -27,22 +27,21 @@ export default class extends Component{
 
     state = {
         loading:true,
-        topRated:null,
+        airingThisWeek:null,
         popular:null,
-        airingToday:null,
-        error:null
+        airingToday:null
     };
 
     async componentDidMount(){
-        let popular,topRated,airingToday,error;
+        let popular,airingThisWeek,airingToday,error;
 
         try{
             ({
                 data:{result:popular}
             }= await tvApi.popular());
             ({
-                data:{result:topRated}
-            }= await tvApi.topRated());
+                data:{result:airingThisWeek}
+            }= await tvApi.getAiringThisWeek());
             ({
                 data:{result:airingToday}
             }= await tvApi.airingToday());
@@ -58,19 +57,19 @@ export default class extends Component{
                 loading:false,
                 error,
                 popular,
-                topRated,
+                airingThisWeek,
                 airingToday
 
             });
         }
     }
     render(){
-        const{loading,popular,topRated,airingToday} =this.state;
+        const{loading,popular,airingThisWeek,airingToday} =this.state;
         return( 
             <TVPresenter 
                 loading={loading} 
                 airingToday={airingToday}
-                topRated={topRated}
+                airingThisWeek={airingThisWeek}
                 popular={popular}
             />
         );
