@@ -17,6 +17,16 @@ export default class extends Component{
         //console.log(text);
 
     };
+    
+    onSubmitEditing = () =>{
+        const {searchTerm} =this.state;
+        if(searchTerm !==""){
+            alert("Searching");
+            return;
+        }
+
+    };
+
     render(){
         const{loading,movieResults,tvResults,searchTerm}=this.state;
 
@@ -27,6 +37,7 @@ export default class extends Component{
                 tvResults={tvResults}
                 searchTerm={searchTerm}
                 handleSearchUpdate={this.handleSearchUpdate}
+                onSubmitEditing={this.onSubmitEditing}
             />
 
         );
